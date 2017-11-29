@@ -12,13 +12,13 @@ class UsersController < ApplicationController
   end
 
   def create
-    cloudinary = Cloudinary::Uploader.upload( params["user"]["image"] )
-    # raise 'hell'
-    if params[:user][:image] == ""
+    if params[:user][:image].nil?
       params[:user][:image] = "https://res.cloudinary.com/dyqesnour/image/upload/v1511739515/gen-toaster_fg73fj.jpg"
     else
+      cloudinary = Cloudinary::Uploader.upload( params["user"]["image"] )
       params[:user][:image] = cloudinary["secure_url"]
     end
+    raise 'hell'
     @user = User.new user_params
     if @user.save
       session[:user_id] = @user.id
