@@ -7,3 +7,28 @@
 <H4>TODO UPVOTES</H4>
 
 <h1>TODO COMMENT WALL</h1>
+<div class="comment-wall">
+  <% @custom.wallposts.each do |w| %>
+    <div class="wallpost">
+      <h4><%= w.user.username %></h4>
+      <p><%= w.message %></p>
+    </div>
+  <% end %>
+
+</div>
+
+<h5>Add A Comment</h5>
+<% if @current_user %>
+  <%= form_for @wallpost do |f| %>
+
+  <%= f.hidden_field :custom_id, :value => @custom.id %>
+
+  <%= f.label :message, :class => "block" %>
+  <%= f.text_field :message, :required => true, :class => "block" %>
+
+  <%= f.submit "Add Comment", :class => "btn btn-primary submit-button" %>
+
+  <% end %>
+<% else %>
+<h6>Please <a href="/login">Sign in</a> to Leave a Review</h6>
+<% end %>

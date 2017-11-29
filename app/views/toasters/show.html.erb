@@ -77,13 +77,14 @@
           <% end %>
         <% end %>
         <p><%= c.body %></p>
-        <% unless @current_user == nil %>
-        <% if c.user == @current_user || @current_user.admin == true %>
-          <small><%= link_to "edit", edit_comment_path(c.id) %></small>
-        <% end %>
-        <% end %>
-        <small></small>
-        <small><p><%= link_to c.user.username, user_path(c.user.id) %></p></small>
+          <% unless @current_user == nil %>
+            <% if c.user == @current_user || @current_user.admin == true %>
+              <small><%= link_to "edit", edit_comment_path(c.id) %></small>
+            <% end %>
+          <% end %>
+        <img src="<%= c.user.image %>" alt="profile-image" class="review-image" >
+        <small><p style="display: inline-block;"><%= link_to c.user.username, user_path(c.user.id) %></p></small>
+        <hr class="seperator2">
       <% end %>
     </div>
   </div>

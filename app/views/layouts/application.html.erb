@@ -36,6 +36,9 @@
             <a href="<%= user_path(@current_user.id) %>" class="text-center"><img src="<%= @current_user.image %>" alt="" class="menu-image">View Profile</a>
           </li>
           <li>
+            <a href="/users/<%= @current_user.id %>/favourites" class="text-center">Favourites</a>
+          </li>
+          <li>
             <%= link_to "Sign Out of #{@current_user.email}", logout_path, :class => "text-center", :method => "delete" %>
           </li>
         </ul>
@@ -54,7 +57,7 @@
 
 
     <footer>
-      <h4>Copyright <a href="https://www.github.com/chriswillphoto">Christopher Nekich 2017</a></h4>
+      <h4>Copyright <a href="https://www.github.com/chriswillphoto">Christopher Nekich © 2017</a></h4>
     </footer>
   </body>
 </html>

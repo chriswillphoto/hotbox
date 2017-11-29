@@ -5,7 +5,10 @@
     <h1 class="text-center"><%= @user.username %>'s Profile</h1>
 
     <%= image_tag @user.image, :class => "img-responsive img-thumbnail profile-image center-block"%>
-    <% if @user == @current_user %><%= link_to "Edit Profile", edit_user_path %> <% end %>
+    <% if @user == @current_user %>
+    <%= link_to "Edit Profile", edit_user_path %>
+    <a href="/users/<%= @current_user.id %>/favourites">View Favourites</a>
+    <% end %>
     <h4 class="text-center">Name: <%= @user.name %></h1>
     <h4 class="text-center">Username: <%= @user.username %></h1>
 

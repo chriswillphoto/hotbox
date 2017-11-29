@@ -12,11 +12,10 @@ class ToastersController < ApplicationController
     if params[:toaster][:image].nil?
       params[:toaster][:image] = "https://res.cloudinary.com/dyqesnour/image/upload/v1511739515/gen-toaster_fg73fj.jpg"
     else
-      cloudinary = Cloudinary::Uploader.upload( params["toaster"]["image"] )
+      cloudinary = Cloudinary::Uploader.upload(params["toaster"]["image"], :width => 1000, :height => 1000, :crop => :pad)
       params[:toaster][:image] = cloudinary["secure_url"]
     end
     params[:toaster][:user_id] = @current_user.id
-    raise "hell"
     @toaster = Toaster.new toaster_params
     if @toaster.save
       redirect_to toasters_path
@@ -33,14 +32,14 @@ class ToastersController < ApplicationController
 
   def edit
     @toaster = Toaster.find params[:id]
-    redirect_to toasters_path unless @toaster.user.id == @current_user || @current_user.admin?
+    redirect_to toasters_path unless @toaster.user == @current_user || @current_user.admin?
   end
 
   def update
     toaster = Toaster.find params[:id]
-    unless params[:custom][:image].nil?
-      cloudinary = Cloudinary::Uploader.upload( params["custom"]["image"] )
-      params[:custom][:image] = cloudinary["secure_url"]
+    unless params[:toaster][:image].nil?
+      cloudinary = Cloudinary::Uploader.upload(params["toaster"]["image"], :width => 1000, :height => 1000, :crop => :pad)
+      params[:toaster][:image] = cloudinary["secure_url"]
     end
     toaster.update toaster_params
     redirect_to toaster_path(params[:id])

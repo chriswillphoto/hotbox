@@ -40,17 +40,22 @@
 #           login GET    /login(.:format)                session#new
 #                 POST   /login(.:format)                session#create
 #          logout DELETE /logout(.:format)               session#destroy
-# 
+#
 
 Rails.application.routes.draw do
 
   root :to => "pages#home"
+
+  get "/users/:id/favourites" => "favourites#index"
+  get "/users/:id/favourites/:board_id" => "favourites#show"
 
   resources :users, :only => [:index, :new, :create, :show, :edit, :update]
   resources :toasters, :only => [:index, :new, :create, :show, :edit, :update, :destroy]
   resources :comments, :only => [:create, :edit, :update, :destroy]
   resources :customs, :only => [:new, :create, :edit, :update, :destroy, :show]
   resources :collections
+  resources :wallposts, :only => [:create]
+
 
   get '/login' => "session#new"
   post '/login' => "session#create"

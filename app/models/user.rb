@@ -16,9 +16,10 @@
 class User < ApplicationRecord
   has_secure_password
   has_many :toasters
-  has_many :collections
+  has_many :favourites
   has_many :comments
   has_many :customs
+  has_many :wallposts
 
   validates :email, :presence => true, :uniqueness => true
 end

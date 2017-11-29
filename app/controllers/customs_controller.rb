@@ -10,7 +10,7 @@ class CustomsController < ApplicationController
     if params[:custom][:image].nil?
       params[:custom][:image] = "https://res.cloudinary.com/dyqesnour/image/upload/v1511739515/gen-toaster_fg73fj.jpg"
     else
-      cloudinary = Cloudinary::Uploader.upload( params["custom"]["image"] )
+      cloudinary = Cloudinary::Uploader.upload(params["custom"]["image"], :width => 1000, :height => 1000, :crop => :pad)
       params[:custom][:image] = cloudinary["secure_url"]
     end
     @custom = Custom.new customs_params
@@ -23,6 +23,7 @@ class CustomsController < ApplicationController
 
   def show
     @custom = Custom.find params[:id]
+    @wallpost = Wallpost.new
   end
 
   def edit
@@ -33,7 +34,7 @@ class CustomsController < ApplicationController
   def update
     custom = Custom.find params[:id]
     unless params[:custom][:image].nil?
-      cloudinary = Cloudinary::Uploader.upload( params["custom"]["image"] )
+      cloudinary = Cloudinary::Uploader.upload(params["custom"]["image"], :width => 1000, :height => 1000, :crop => :pad)
       params[:custom][:image] = cloudinary["secure_url"]
     end
     custom.update customs_params

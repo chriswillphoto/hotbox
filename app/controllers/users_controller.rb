@@ -15,7 +15,7 @@ class UsersController < ApplicationController
     if params[:user][:image].nil?
       params[:user][:image] = "https://res.cloudinary.com/dyqesnour/image/upload/v1511739515/gen-toaster_fg73fj.jpg"
     else
-      cloudinary = Cloudinary::Uploader.upload( params["user"]["image"] )
+      cloudinary = Cloudinary::Uploader.upload(params["user"]["image"], :width => 1000, :height => 1000, :crop => :pad)
       params[:user][:image] = cloudinary["secure_url"]
     end
     # raise 'hell'
@@ -40,7 +40,7 @@ class UsersController < ApplicationController
   def update
     user = User.find params[:id]
     unless params[:user][:image].nil?
-      cloudinary = Cloudinary::Uploader.upload( params["user"]["image"] )
+      cloudinary = Cloudinary::Uploader.upload(params["user"]["image"], :width => 1000, :height => 1000, :crop => :pad)
       params[:user][:image] = cloudinary["secure_url"]
     end
     user.update user_params
