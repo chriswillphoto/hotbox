@@ -29,8 +29,9 @@
 </div>
 
 <div class="customs">
-  <h2>Share Your Custom Toasters Amongst Friends</h2>
   <div class="customs-box">
+    <h2>Share Your Custom Toasters Amongst Friends</h2>
+    
     <% @customs.each do |c| %>
     <div class="home-custom" style="background-image: url(<%= c.image %>)">
       <h6><%= c.name %> by <a href="/users/<%= c.user.id %>"><%= c.user.username -%></a></h6>

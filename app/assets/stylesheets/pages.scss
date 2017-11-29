@@ -10,13 +10,15 @@
   background-repeat: no-repeat;
   background-position: 50% 85%;
   text-align: center;
-  margin-top: -20px;
+  // margin-top: -20px;
 }
 
 .titles {
   color: white;
   position: relative;
-  top: 30vh;
+  top: calc(30vh - 20px);
+  background-color: rgba(20,20,20,0.3);
+  padding: 20px 0 40px;
 }
 
 .titles h1 {
@@ -78,12 +80,15 @@
 }
 
 .customs-box {
+  padding: 20px;
   width: 60%;
-  height: 190px;
+  height: 300px;
   // background-color: salmon;
   margin: 0 auto;
-  overflow-x: scroll;
+  // overflow-x: scroll;
   text-align: center;
+  background-color: rgba(20,20,20,0.3);
+  border-radius: 2em;
 }
 
 .home-custom {
