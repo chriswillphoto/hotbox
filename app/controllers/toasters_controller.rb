@@ -9,7 +9,14 @@ class ToastersController < ApplicationController
   end
 
   def create
+    if params[:toaster][:image].nil?
+      params[:toaster][:image] = "https://res.cloudinary.com/dyqesnour/image/upload/v1511739515/gen-toaster_fg73fj.jpg"
+    else
+      cloudinary = Cloudinary::Uploader.upload( params["toaster"]["image"] )
+      params[:toaster][:image] = cloudinary["secure_url"]
+    end
     params[:toaster][:user_id] = @current_user.id
+    raise "hell"
     @toaster = Toaster.new toaster_params
     if @toaster.save
       redirect_to toasters_path
