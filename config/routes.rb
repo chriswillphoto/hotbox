@@ -25,7 +25,8 @@
 #         customs POST   /customs(.:format)              customs#create
 #      new_custom GET    /customs/new(.:format)          customs#new
 #     edit_custom GET    /customs/:id/edit(.:format)     customs#edit
-#          custom PATCH  /customs/:id(.:format)          customs#update
+#          custom GET    /customs/:id(.:format)          customs#show
+#                 PATCH  /customs/:id(.:format)          customs#update
 #                 PUT    /customs/:id(.:format)          customs#update
 #                 DELETE /customs/:id(.:format)          customs#destroy
 #     collections GET    /collections(.:format)          collections#index
@@ -39,7 +40,7 @@
 #           login GET    /login(.:format)                session#new
 #                 POST   /login(.:format)                session#create
 #          logout DELETE /logout(.:format)               session#destroy
-#
+# 
 
 Rails.application.routes.draw do
 
@@ -48,7 +49,7 @@ Rails.application.routes.draw do
   resources :users, :only => [:index, :new, :create, :show, :edit, :update]
   resources :toasters, :only => [:index, :new, :create, :show, :edit, :update, :destroy]
   resources :comments, :only => [:create, :edit, :update, :destroy]
-  resources :customs, :only => [:new, :create, :edit, :update, :destroy]
+  resources :customs, :only => [:new, :create, :edit, :update, :destroy, :show]
   resources :collections
 
   get '/login' => "session#new"

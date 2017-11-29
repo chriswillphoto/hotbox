@@ -38,6 +38,10 @@ class ToastersController < ApplicationController
 
   def update
     toaster = Toaster.find params[:id]
+    unless params[:custom][:image].nil?
+      cloudinary = Cloudinary::Uploader.upload( params["custom"]["image"] )
+      params[:custom][:image] = cloudinary["secure_url"]
+    end
     toaster.update toaster_params
     redirect_to toaster_path(params[:id])
   end

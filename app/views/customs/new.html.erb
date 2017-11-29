@@ -1,12 +1,12 @@
 <h1>Add a Custom Toaster to the Database</h1>
 
-<%= form_for @custom  do |f| %>
+<%= form_for @custom, :html => {:multipart => true}  do |f| %>
 
   <%= f.label :name %>
   <%= f.text_field :name, :required => true %>
 
   <%= f.label :image %>
-  <%= f.text_field :image %>
+  <%= f.file_field :image %>
 
   <%= f.label :description %>
   <%= f.text_area :description, size: "50x5" %>

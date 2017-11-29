@@ -4,6 +4,22 @@
   box-sizing: border-box;
 }
 
+footer {
+  height: 80px;
+  background-color: salmon;
+  text-align: center;
+}
+
+footer h4{
+  line-height: 80px;
+  margin: 0;
+}
+
+.home-socialbox {
+  margin-top: 20px;
+  margin-bottom: 20px;
+}
+
 /*h1 {
   font-size: 5.9vw;
 }

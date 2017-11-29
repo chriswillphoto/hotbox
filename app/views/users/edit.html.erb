@@ -9,7 +9,7 @@
 </ol>
 <% end %>
 
-<%= form_for @user do |f| %>
+<%= form_for @user, :html => { :multipart => true } do |f| %>
 
 <%= f.label :name %>
 <%= f.text_field :name %>
@@ -19,6 +19,9 @@
 
 <%= f.label :email %>
 <%= f.email_field :email %>
+
+<%= f.label :image %>
+<%= f.file_field :image %>
 
 <%= f.label :password %>
 <%= f.password_field :password %>

@@ -79,16 +79,24 @@
 
 .customs-box {
   width: 60%;
-  height: 200px;
-  background-color: salmon;
+  height: 190px;
+  // background-color: salmon;
   margin: 0 auto;
   overflow-x: scroll;
+  text-align: center;
 }
 
 .home-custom {
-  height: 100%;
-  width: 200px;
-  background-color: blue;
+  height: 150px;
+  width: 150px;
+  background-repeat: no-repeat;
+  background-size: contain;
+  // background-color: blue;
+  display: inline-block;
+}
+
+.home-custom h6 {
+  line-height: 150px;
 }
 
 .twitlink, .facelink, .pinlink, .instalink {

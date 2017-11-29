@@ -15,4 +15,6 @@
 class Custom < ApplicationRecord
   belongs_to :user
   belongs_to :toaster
+
+  validates :image, :presence => true
 end

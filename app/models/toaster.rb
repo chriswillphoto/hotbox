@@ -11,7 +11,7 @@
 #  created_at   :datetime         not null
 #  updated_at   :datetime         not null
 #  user_id      :integer
-#  image        :text             default("https://res.cloudinary.com/dyqesnour/image/upload/v1511739515/gen-toaster_fg73fj.jpg")
+#  image        :text
 #
 
 class Toaster < ApplicationRecord

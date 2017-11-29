@@ -1,6 +1,6 @@
 <h1>Edit Toaster</h1>
 
-<%= form_for @toaster do |f| %>
+<%= form_for @toaster, :html => {:multipart => true} do |f| %>
 
   <%= f.label :model %>
   <%= f.text_field :model, :required => true %>
@@ -12,7 +12,9 @@
   <%= f.number_field :year %>
 
   <%= f.label :image %>
-  <%= f.text_field :image %>
+  <%= f.file_field :image %>
+
+
 
   <%= f.submit "Add the Toaster" %>
 

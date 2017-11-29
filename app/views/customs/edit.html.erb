@@ -1,13 +1,13 @@
 <h1>EDIT CUSTOM</h1>
 
-<%= form_for @custom do |f| %>
+<%= form_for @custom, :html => {:multipart => true} do |f| %>
 
 
 <%= f.label :name %>
 <%= f.text_field :name, :required => true %>
 
 <%= f.label "image" %>
-<%= f.text_field :image %>
+<%= f.file_field :image %>
 
 <%= f.label "Description" %>
 <%= f.text_area :description %>

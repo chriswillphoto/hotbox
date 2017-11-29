@@ -18,7 +18,7 @@ class UsersController < ApplicationController
       cloudinary = Cloudinary::Uploader.upload( params["user"]["image"] )
       params[:user][:image] = cloudinary["secure_url"]
     end
-    raise 'hell'
+    # raise 'hell'
     @user = User.new user_params
     if @user.save
       session[:user_id] = @user.id
@@ -39,8 +39,12 @@ class UsersController < ApplicationController
 
   def update
     user = User.find params[:id]
+    unless params[:user][:image].nil?
+      cloudinary = Cloudinary::Uploader.upload( params["user"]["image"] )
+      params[:user][:image] = cloudinary["secure_url"]
+    end
     user.update user_params
-    redirect_to root_path
+    redirect_to user_path(user.id)
   end
 
   private
