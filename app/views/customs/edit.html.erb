@@ -1,0 +1,19 @@
+<h1>EDIT CUSTOM</h1>
+
+<%= form_for @custom do |f| %>
+
+
+<%= f.label :name %>
+<%= f.text_field :name, :required => true %>
+
+<%= f.label "image" %>
+<%= f.text_field :image %>
+
+<%= f.label "Description" %>
+<%= f.text_area :description %>
+
+<%= f.submit "Add Comment" %>
+
+<% end %>
+
+<small><%= link_to "delete", custom_path(@custom), :method => "delete" %></small>

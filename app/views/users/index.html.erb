@@ -1,0 +1,7 @@
+<h1>Index</h1>
+
+<% @users.each do |u| %>
+<h3><%= u.username %></h3>
+<p><%= u.email %></p>
+<a href="/users/<%= u.id %>">link to profile</a>
+<% end %>

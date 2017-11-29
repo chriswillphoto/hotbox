@@ -1,0 +1,92 @@
+<div class="container">
+
+  <div class="col-md-4">
+    <img src="<%= @toaster.image %>" class="img-thumbnail t-profile" alt="">
+    <p class="text-right">Added by <%= link_to @toaster.user.username, user_path(@toaster.user.id) %></p>
+    <% if @current_user == @toaster.user %>
+    <%= link_to "Edit", edit_toaster_path(@toaster.id) %>
+    <%= button_to "Delete Toaster", toaster_path(@toaster.id), :method => "delete" %>
+    <% end %>
+  </div>
+
+  <div class="col-md-8 showtoaster">
+    <div class="row center">
+      <h2><%= @toaster.model %></h2>
+    </div>
+    <div class="row center">
+      <h3>by <%= @toaster.manufacturer %></h3>
+    </div>
+    <div class="row center">
+      <% unless @toaster.ratings == 0%>
+      <div class="showstars">
+        <div class="goldstars" style="width: calc(50px * <%= @toaster.rating / @toaster.ratings %>)"></div>
+      </div>
+    </div>
+    <div class="row center">
+      <h5>( <%= sprintf('%.2f', @toaster.rating / @toaster.ratings ) %> )</h5>
+      <% else %>
+      <h5>Not Yet Rated</h3>
+      <% end %>
+    </div>
+  </div>
+
+  </div>
+</div>
+
+
+
+
+<!-- <p>Added by <%= link_to @toaster.user.username, user_path(@toaster.user.id) %></p>
+<% if @current_user == @toaster.user %>
+<%= link_to "Edit", edit_toaster_path(@toaster.id) %>
+<%= button_to "Delete Toaster", toaster_path(@toaster.id), :method => "delete" %>
+<% end %> -->
+
+<div class="container">
+  <div class="col-md-4">
+
+  <h5>Add A Review</h5>
+  <% if @current_user %>
+    <%= form_for @comment do |f| %>
+
+    <%= f.hidden_field :toaster_id, :value => @toaster.id %>
+
+    <%= f.label :title, :class => "block" %>
+    <%= f.text_field :title, :required => true, :class => "block" %>
+    <%= f.label "Rating /5", :class => "block" %>
+    <%= f.number_field :rating, :min => 1, :max => 5, :class => "block" %>
+    <%= f.label "Comment", :class => "block" %>
+    <%= f.text_area :body, :required => true, size: "50x5", :class => "block"%>
+    <%= f.submit "Add Comment", :class => "btn btn-primary submit-button" %>
+
+    <% end %>
+  <% else %>
+  <h6>Please <a href="/login">Sign in</a> to Leave a Review</h6>
+  <% end %>
+  </div>
+
+
+  <div class="col-md-8">
+    <h5>Reviews</h5>
+    <div class="commentbox">
+      <% @comments.each do |c| %>
+        <h4><%= c.title %> <% if c.updated_at != c.created_at %><small><em>- Edited</em></small><% end %></h4>
+        <% unless c.rating.nil? %>
+          <% (0...c.rating).each do %>
+            <%= image_tag "https://res.cloudinary.com/dyqesnour/image/upload/v1511736720/star_bcdkot.png", :class => "stars", :alt => "star" %>
+          <% end %>
+        <% end %>
+        <p><%= c.body %></p>
+        <% unless @current_user == nil %>
+        <% if c.user == @current_user || @current_user.admin == true %>
+          <small><%= link_to "edit", edit_comment_path(c.id) %></small>
+        <% end %>
+        <% end %>
+        <small></small>
+        <small><p><%= link_to c.user.username, user_path(c.user.id) %></p></small>
+      <% end %>
+    </div>
+  </div>
+
+
+</div>

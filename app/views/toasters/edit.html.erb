@@ -1,0 +1,20 @@
+<h1>Edit Toaster</h1>
+
+<%= form_for @toaster do |f| %>
+
+  <%= f.label :model %>
+  <%= f.text_field :model, :required => true %>
+
+  <%= f.label :manufacturer %>
+  <%= f.text_field :manufacturer, :required => true %>
+
+  <%= f.label :year %>
+  <%= f.number_field :year %>
+
+  <%= f.label :image %>
+  <%= f.text_field :image %>
+
+  <%= f.submit "Add the Toaster" %>
+
+
+<% end %>

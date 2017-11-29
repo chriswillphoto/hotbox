@@ -1,0 +1,173 @@
+// Place all the styles related to the Pages controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+.cover {
+  height: 80vh;
+  background-image: url("https://res.cloudinary.com/dyqesnour/image/upload/v1511832479/cartoon_uk8skv.jpg");
+  width: 100%;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: 50% 85%;
+  text-align: center;
+  margin-top: -20px;
+}
+
+.titles {
+  color: white;
+  position: relative;
+  top: 30vh;
+}
+
+.titles h1 {
+  font-size: 70px;
+}
+
+.signup {
+  margin-top: 10px;
+  width: 40vh;
+  height: 40px;
+  /*vertical-align: middle;*/
+  border-radius: 1em;
+  background-color: salmon;
+  color: white;
+  padding-top: 8px;
+  transition: 0.6s all;
+}
+
+.signup:hover {
+  background-color: navy;
+  color: white;
+}
+
+.vcenter {
+  display: inline-block;
+  vertical-align: middle;
+}
+
+.home-users {
+  height: 150px;
+}
+
+.users {
+  padding: 70px 20px;
+  text-align: center;
+}
+
+.userbox {
+  /*padding: 70px 20px;*/
+  border-right: 3px solid slategrey;
+  text-align: center;
+  /*margin: 0 auto;*/
+}
+
+.customs {
+  height: 500px;
+  background-color: navy;
+  background-image: url("https://res.cloudinary.com/dyqesnour/image/upload/c_scale,w_1043/v1511841140/bread_ocbjzr.jpg");
+  background-size: cover;
+  background-attachment: fixed;
+  background-position: center 80%;
+  text-align: center;
+  color: white;
+  padding: 100px 10px;
+}
+
+.customs h2 {
+  /*margin-top: 200px;*/
+}
+
+.customs-box {
+  width: 60%;
+  height: 200px;
+  background-color: salmon;
+  margin: 0 auto;
+  overflow-x: scroll;
+}
+
+.home-custom {
+  height: 100%;
+  width: 200px;
+  background-color: blue;
+}
+
+.twitlink, .facelink, .pinlink, .instalink {
+  height: 100px;
+  width: 100px;
+  background-size: contain;
+  filter: grayscale(1);
+  transition: all 0.5s
+}
+
+.twitlink {
+  background-image: url("https://res.cloudinary.com/dyqesnour/image/upload/v1511908342/if_twitter_2691271_qawjo9.png");
+}
+.facelink {
+  background-image: url("https://res.cloudinary.com/dyqesnour/image/upload/v1511908342/if_facebook_2691283_fdfpgg.png");
+}
+.pinlink {
+  background-image: url("https://res.cloudinary.com/dyqesnour/image/upload/v1511908342/if_pinterest_2691277_eeugrh.png");
+}
+.instalink {
+  background-image: url("https://res.cloudinary.com/dyqesnour/image/upload/v1511908342/if_instagram_2691281_wdm7ea.png");
+}
+
+.twitlink:hover {
+  filter: none;
+  cursor: pointer;
+}
+.facelink:hover {
+  filter: none;
+  cursor: pointer;
+}
+.pinlink:hover {
+  filter: none;
+  cursor: pointer;
+}
+.instalink:hover {
+  filter: none;
+  cursor: pointer;
+}
+
+@media only screen and (max-width: 400px) {
+    /* For mobile phones: */
+     .titles {
+        top: 20%;
+    }
+    .cover {
+      height: 100vh;
+      padding: 20px;
+    }
+    .userbox {
+      border: none;
+    }
+    .users {
+      padding: none;
+    }
+    .userbox {
+      width: 100%;
+      margin-bottom: 20px;
+    }
+}
+
+
+
+@media only screen and (max-width: 325px) {
+    /* For mobile phones: */
+     .titles {
+        top: 10%;
+    }
+    .cover {
+      height: 100vh;
+      padding: 20px;
+    }
+    .userbox {
+      border: none;
+    }
+    .users {
+      padding: none;
+    }
+    .titles h1 {
+      font-size: 50px;
+    }
+}

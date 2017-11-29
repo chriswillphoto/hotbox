@@ -1,0 +1,218 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/*h1 {
+  font-size: 5.9vw;
+}
+h2 {
+  font-size: 3.7vh;
+}
+
+h3 {
+  font-size: 3vh;
+}
+p {
+  font-size: 1.2vmin;
+}
+
+h4 {
+  font-size: 2vh;
+}*/
+
+/*label {
+  width: 80px;
+}*/
+
+.nav {
+  /*margin-bottom: -20px;*/
+}
+
+.block {
+  display: block;
+}
+
+.inline {
+  display: inline-block;
+}
+
+.field_with_errors {
+  display: inline-block;
+  border: 1px solid red;
+}
+
+.menu-image {
+  height: 40px;
+  width: 40px;
+  margin: 0 auto;
+  text-align: center;
+  display: block;
+  border-radius: 50%;
+}
+
+.commentbox {
+  height : 300px;
+  overflow-y: scroll;
+  border: 1px solid skyblue;
+  padding: 5px;
+  border-radius: 5px;
+  margin-bottom: 20px;
+}
+
+.stars {
+  height: 10px;
+  width: 10px;
+}
+
+.herotitle {
+  text-align: center;
+  height: 300px;
+}
+
+.herotitle h1 {
+  line-height: 300px;
+  font-size: 100px;
+}
+
+.modellist {
+  background-color: skyblue;
+}
+
+.toastinfo {
+  height: 30px;
+  background-color: purple;
+  vertical-align: middle;
+}
+
+.toastinfo h4 {
+  display: inline-block;
+  /*margin: 0 30px;*/
+  border: 1px solid black;
+  width: 430px;
+  /*vertical-align: middle;*/
+  /*line-height: 30px;*/
+}
+.toastbox {
+  height: 40px;
+}
+
+
+
+.toastbox a {
+  width: 30%;
+}
+
+.seperator {
+  margin: 5px 0;
+  border-bottom: 1px solid black;
+}
+
+.seperator2 {
+  margin: 0;
+}
+
+.listimage {
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  /*margin-top: -7px;*/
+  /*display: flex;
+  align-items: center;*/
+}
+
+.t-profile {
+  border: 2px solid black;
+  border-radius: 1.5em;
+}
+
+.showstars {
+  height: 50px;
+  width: 250px;
+  margin: 0 auto;
+  background-image: url("https://res.cloudinary.com/dyqesnour/image/upload/v1511743405/greystars_ozfed1.png");
+  background-repeat: no-repeat;
+}
+
+.goldstars {
+  height: 50px;
+  background-repeat: no-repeat;
+  /*width: 50px;*/
+  position: relative;
+  top: 0;
+  left: 0;
+  background-image: url("https://res.cloudinary.com/dyqesnour/image/upload/v1511743405/stars_rbnmo7.png");
+}
+
+.smallshowstars {
+  height: 25px;
+  /*margin: 0 auto;*/
+  width: 125px;
+  background-image: url("https://res.cloudinary.com/dyqesnour/image/upload/v1511751431/smallgreystars_bcxu55.png")
+}
+
+.smallgoldstars {
+  height: 25px;
+  position: relative;
+  top: 0;
+  left: 0;
+  background-image: url("https://res.cloudinary.com/dyqesnour/image/upload/v1511751431/smallstars_ewqrn7.png");
+}
+
+.showtoaster {
+  text-align: center;
+}
+
+.center h5, .center h2, .center h3 {
+  text-align: center;
+  margin: 0 auto;
+}
+
+/*.showtoaster h1, .showtoaster h2, .showtoaster h3 {
+  margin: 0;
+  padding: 0;
+}*/
+
+.submit-button {
+  margin-top: 5px;
+}
+
+.profile-image {
+  /*margin: 0 auto;*/
+  height: 300px;
+  border-radius: 1em;
+}
+
+.profile {
+  text-align: center;
+}
+
+.row {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.row > [class*='col-'] {
+  display: flex;
+  flex-direction: column;
+  align-self: center;
+}
+
+.row > [class*='col-'] img {
+  align-self: center;
+}
+
+::-webkit-scrollbar {
+  -webkit-appearance: none;
+  width: 6px;
+}
+
+::-webkit-scrollbar-thumb {
+  border-radius: 9px;
+  background-color: rgba(0,0,0,.5);
+  -webkit-box-shadow: 0 0 1px rgba(255,255,255,.5);
+}

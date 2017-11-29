@@ -1,0 +1,85 @@
+
+<div class="herotitle">
+  <!-- <div class="toast-title">
+    <h1>TOASTER</h1>
+  </div> -->
+  <div class='toaster-container bounce'>
+
+  <!-- <div class='contain-smoke'>
+    <div class='smoke left'></div>
+    <div class='smoke right'></div>
+    <div class='smoke left'></div>
+    <div class='smoke right'></div>
+  </div> -->
+  <!-- <div class='contain-smoke'>
+    <div class='smoke left'></div>
+    <div class='smoke right'></div>
+    <div class='smoke left'></div>
+    <div class='smoke right'></div>
+  </div> -->
+  <div class='contain-toast bounce2'>
+    <div class='crust-bottom'></div>
+    <div class='crust'></div>
+    <div class='toast bread'></div>
+    <div class='toast-bottom bread'></div>
+    <div class='crust-bottom front'></div>
+    <div class='crust front'></div>
+    <div class='toast front bread'></div>
+    <div class='toast-bottom front bread'></div>
+  </div>
+  <div class='contain-toaster'>
+    <div class='toaster-back'></div>
+    <div class='toaster'></div>
+    <div class='base'></div>
+    <div class='knob-base'></div>
+    <div class='knob'></div>
+  </div>
+  </div>
+</div>
+
+
+
+<div class="container">
+  <div class="row">
+    <div class="col-xs-3 col-xs-offset-2">
+      <h4>Model</h4>
+    </div>
+    <div class="col-xs-3">
+      <h4>Manufacturer</h4>
+    </div>
+    <div class="col-xs-3">
+      <h4>Rating</h4>
+    </div>
+  </div>
+  <hr class="seperator">
+
+<% @toasters.each do |t| %>
+    <div class="row">
+    <div class="col-xs-1 col-xs-offset-1">
+      <img src="<%= t.image %>" alt="toaster-image" class="listimage">
+    </div>
+    <div class="col-xs-3">
+      <a href="<%= toaster_path(t.id) %>">
+        <h4><%= t.model %></h4><% unless t.year.nil? %><h6>( <%= t.year %> )</h6><% end %>
+      </a>
+    </div>
+    <div class="col-xs-3">
+      <h4><%= t.manufacturer %></h4>
+    </div>
+    <div class="col-xs-3">
+      <h6><% unless t.rating == 0 %>
+        <div class="smallshowstars">
+          <div class="smallgoldstars" style="width: calc(25px * <%= t.rating / t.ratings %>)"></div>
+        </div>
+        <p><%= sprintf('%.2f', t.rating / t.ratings ) %></p>
+        <% else %>
+        Not yet Rated
+        <% end %>
+      </h6>
+    </div>
+
+    <!-- <%= link_to "View Toaster", toaster_path(t.id) %> -->
+  </div>
+  <hr class="seperator2">
+<% end %>
+</div>

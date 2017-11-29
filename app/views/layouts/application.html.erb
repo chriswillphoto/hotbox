@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Toasty</title>
+    <%= csrf_meta_tags %>
+
+    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+  </head>
+
+  <body>
+    <ul class="nav nav-pills nav-justified">
+      <li class="nav item">
+        <%= link_to "Home", root_path, :class => "nav-link" %>
+      </li>
+      <li class="nav item">
+        <%= link_to "Toasters", toasters_path, :class => "nav-link" %>
+      </li>
+      <% if @current_user.present? %>
+
+      <% if @current_user.admin? %>
+      <li class="nav item">
+        <%= link_to "All Users", users_path, :class => "nav-link" %>
+      </li>
+      <% end %>
+      <li class="nav item">
+        <%= link_to "Add A Toaster", new_toaster_path, :class => "nav-link" %>
+      </li>
+
+      <li role="presentation" class="dropdown nav item">
+        <a class="dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">
+          <%= @current_user.username %> <span class="caret"></span>
+        </a>
+        <ul class="dropdown-menu" style="width: 100%;">
+          <li>
+            <a href="<%= user_path(@current_user.id) %>" class="text-center"><img src="<%= @current_user.image %>" alt="" class="menu-image">View Profile</a>
+          </li>
+          <li>
+            <%= link_to "Sign Out of #{@current_user.email}", logout_path, :class => "text-center", :method => "delete" %>
+          </li>
+        </ul>
+      </li>
+      <% else %> <!--- IF CURRENT USER PRESENT --->
+      <li class="nav item">
+        <%= link_to "Sign Up", new_user_path, :class => "nav-link" %>
+      </li>
+      <li class="nav item">
+        <%= link_to "Sign In", login_path, :class => "nav-link" %>
+      </li>
+      <% end %> <!--- IF NO ONE IS LOGGED IN --->
+    </ul>
+
+    <%= yield %>
+  </body>
+</html>

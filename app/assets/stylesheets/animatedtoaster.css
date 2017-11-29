@@ -1,0 +1,263 @@
+.contain-smoke,
+.crust-bottom,
+.crust,
+.toast,
+.toast-bottom,
+.toaster-back,
+.toaster-back:after,
+.toaster,
+.base:before,
+.base,
+.knob-base,
+.knob {
+  position: absolute;
+}
+
+.toast-title {
+  /*position: relative;
+  top: 0;
+  left: 0;*/
+  display: inline-block;
+}
+
+.herotitle {
+  /*background-color: salmon;*/
+  background-image: url("https://res.cloudinary.com/dyqesnour/image/upload/v1511824728/Title_kiqxby.png");
+  background-repeat: no-repeat;
+  background-position: center -40%;
+  background-size: contain;
+}
+
+/*  Main Container */
+.toaster-container {
+  width: 330px;
+  height: 100%;
+  margin: auto;
+  position: relative;
+  border-bottom: none;
+  /*background-color: skyblue;*/
+  transform: rotate(-7deg);
+}
+
+/* Smoke */
+.contain-smoke {
+  width: 50px;
+  height: 120px;
+  top: 80px;
+  opacity: 0;
+}
+
+.smoke {
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+}
+
+.right {
+  border-right: 4px solid #231F20;
+}
+
+.left {
+  border-left: 4px solid #231F20;
+}
+
+.contain-smoke:nth-child(1) {
+  left: 160px;
+}
+
+.contain-smoke:nth-child(2) {
+  left: 120px;
+}
+
+/* toaster */
+.toaster-back {
+  top: 175px;
+  left: 50px;
+  width: 170px;
+  height: 110px;
+  border-radius: 30px 30px 10px 10px;
+  border: 7px solid #231F20;
+  background: #888;
+}
+.toaster-back:after {
+  content: " ";
+  top: -7px;
+  left: 15px;
+  width: 170px;
+  height: 110px;
+  border-radius: 30px 30px 10px 10px;
+  border: 7px solid #231F20;
+}
+
+.toaster {
+  top: 175px;
+  left: 95px;
+  width: 170px;
+  height: 110px;
+  border-radius: 30px 30px 10px 10px;
+  border: 7px solid #231F20;
+  background: salmon;
+}
+
+.base {
+  width: 170px;
+  height: 19px;
+  top: 279px;
+  left: 95px;
+  background: #888;
+  border-radius: 5px;
+  border: 7px solid #231F20;
+}
+.base:before {
+  content: "";
+  width: 43px;
+  height: 19px;
+  top: -7px;
+  left: -48px;
+  background: #888;
+  border: 7px solid #231F20;
+  border-radius: 5px;
+}
+
+.knob-base {
+  top: 190px;
+  left: 110px;
+  width: 27px;
+  height: 27px;
+  background: #888;
+  border-radius: 50px;
+  border: 7px solid #231F20;
+}
+
+.knob {
+  top: 190px;
+  left: 122px;
+  width: 27px;
+  height: 27px;
+  background: white;
+  border-radius: 50px;
+  border: 7px solid #231F20;
+}
+
+/* bread */
+.crust {
+  width: 50px;
+  height: 29px;
+  top: 120px;
+  left: 86px;
+  background: #CCB26E;
+  border-radius: 20px;
+  border: 7px solid #231F20;
+}
+
+.crust-bottom {
+  width: 40px;
+  height: 60px;
+  top: 147px;
+  left: 94px;
+  background: #CCB26E;
+  border: 7px solid #231F20;
+  border-right: none;
+  border-top: none;
+  border-radius: 0 0 0 10px;
+}
+
+.toast {
+  width: 100px;
+  height: 30px;
+  top: 120px;
+  left: 98px;
+  background: #E4D8BE;
+  border-radius: 20px;
+  border: 7px solid #231F20;
+}
+
+.toast-bottom {
+  width: 85px;
+  height: 65px;
+  top: 142px;
+  left: 106px;
+  background: #E4D8BE;
+  border: 7px solid #231F20;
+  border-top: none;
+  border-radius: 5px;
+}
+
+.crust-bottom.front {
+  top: 142px;
+  left: 128px;
+}
+
+.crust.front {
+  top: 120px;
+  left: 121px;
+}
+
+.toast.front {
+  top: 120px;
+  left: 133px;
+}
+
+.toast-bottom.front {
+  top: 142px;
+  left: 140px;
+}
+
+
+
+.bounce {
+  animation: bounce 2s infinite alternate ease-in-out;
+}
+
+.bounce2 {
+  animation: bounce2 2s infinite alternate linear;
+}
+
+.bread {
+  animation: bread 2s infinite alternate ease-in-out;
+}
+
+@keyframes bounce {
+  0% {
+    transform: rotate(-5deg)
+    translateX(-30px);
+  }
+  100% {
+    transform: rotate(5deg)
+    translateX(30px);
+  }
+}
+
+@keyframes bounce2 {
+  0% {
+    transform: translateY(-20px)
+  }
+  5% {
+    transform: translateY(-15px)
+  }
+  10% {
+    transform: translateY(-20px)
+  }
+  50% {
+    transform: translateY(20px);
+  }
+  90% {
+    transform: translateY(-20px);
+  }
+  95% {
+    transform: translateY(-15px);
+  }
+  100% {
+    transform: translateY(-20px);
+  }
+}
+
+@keyframes bread {
+  0% {
+    background-color: #E4D8BE;
+  }
+
+  100% {
+    background-color: #b0a388;
+  }
+}

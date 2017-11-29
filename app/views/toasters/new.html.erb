@@ -1,0 +1,21 @@
+<h1>Add a Toaster to the Database</h1>
+
+<%= form_for @toaster do |f| %>
+
+  <%= f.label :model %>
+  <%= f.text_field :model, :required => true %>
+
+  <%= f.label :manufacturer %>
+  <%= f.text_field :manufacturer, :required => true %>
+
+  <%= f.label "Year (optional):" %>
+  <%= f.number_field :year %>
+  <!-- <%= f.hidden_field :user_id, :value => @current_user.id %> -->
+
+  <%= f.label :image %>
+  <%= f.text_field :image %>
+
+  <%= f.submit "Add the Toaster" %>
+
+
+<% end %>

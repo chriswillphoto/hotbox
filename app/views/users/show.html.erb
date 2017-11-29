@@ -1,0 +1,28 @@
+
+<div class="container">
+
+  <div class="profile">
+    <h1 class="text-center"><%= @user.username %>'s Profile</h1>
+
+    <%= image_tag @user.image, :class => "img-responsive img-thumbnail profile-image center-block"%>
+    <% if @user == @current_user %><%= link_to "Edit Profile", edit_user_path %> <% end %>
+    <h4 class="text-center">Name: <%= @user.name %></h1>
+    <h4 class="text-center">Username: <%= @user.username %></h1>
+
+  </div>
+
+  <div class="user-customs">
+    <% unless @user.customs.empty? %>
+    <% @user.customs.each do |custom| %>
+    <div class="user-custom" style="background-image: url(<%= custom.image %>)">
+    <h3><%= custom.name %></h3> <% if @user == @current_user %> <a href="/customs/<%= custom.id %>/edit">Edit</a> <% end %>
+    </div>
+    <% end %>
+    <% else %>
+    <p><%= @user.username %> has no customs!</p>
+    <% end %>
+    <% if @user == @current_user %>
+    <a href="/customs/new">Add a New Custom Toaster to your Inventory!</a>
+    <% end %>
+  </div>
+</div>
