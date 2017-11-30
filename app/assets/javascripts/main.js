@@ -4,5 +4,8 @@ $(document).ready(function(){
     $(".sortbutton").trigger("click")
   })
 
+  $(".fave-link").on("click", function(){
+    $(".faves-box").toggleClass("hidden")
+  })
 
 })

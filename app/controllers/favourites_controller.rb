@@ -2,6 +2,7 @@ class FavouritesController < ApplicationController
 
   def index
     @user = User.find params[:id]
+    @favourite = Favourite.new
   end
 
   def show

@@ -1,7 +1,24 @@
-<h1><%= @user.username %>'s Favourites</h1>
 
-<% @user.favourites.each do |f| %>
+<div class="fave-container">
+  <h1><%= @user.username %>'s Favourites</h1>
 
-<h1><%= f.name %></h1>
+  <% unless @user.favourites.empty? %>
+    <% @user.favourites.each do |f| %>
+      <div class="fave-link-box">
+        <a href="/users/<%= @user.id %>/favourites/<%= f.id %>" class="fave-link">
+         <h6><%= f.name %></h6>
+        </a>
+      </div>
+    <% end %>
+  <% else %>
+    <h1>You have no favourites!</h1>
+  <% end %>
 
-<% end %>
+  <h1>Add A New Favourite Board</h1>
+  <%= form_for @favourite do |f| %>
+    <%= f.label :name %>
+    <%= f.text_field :name, :required => true %>
+    <%= f.submit "Create" %>
+  <% end %>
+
+</div>
