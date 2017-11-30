@@ -35,10 +35,12 @@
 
 <H4>UPVOTES</H4>
 <h5><%= @custom.upvotes.length %></h5>
-<% unless @current_user.upvotes.exists?(:custom_id => @custom.id) %>
-  <%= link_to "Upvote", "/customs/#{params[:id]}/upvotes", :method => :post %>
-<% else %>
-  <%= link_to "Un Upvote", "/customs/#{params[:id]}/upvotes", :method => :delete %>
+<% unless @current_user.nil? %>
+  <% unless @current_user.upvotes.exists?(:custom_id => @custom.id) %>
+    <%= link_to "Upvote", "/customs/#{params[:id]}/upvotes", :method => :post %>
+  <% else %>
+    <%= link_to "Un Upvote", "/customs/#{params[:id]}/upvotes", :method => :delete %>
+  <% end %>
 <% end %>
 
 <h1>COMMENT WALL</h1>
