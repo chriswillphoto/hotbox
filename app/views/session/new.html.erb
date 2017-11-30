@@ -1,13 +1,17 @@
-<h1>Login</h1>
+<div class="login-container">
+
+  <h1>Login</h1>
 
 
-<%= flash[:error] %>
-<%= form_tag login_path do %>
+  <%= flash[:error] %>
+  <%= form_tag login_path do %>
 
-<%= label_tag "Username/Email" %>
-<%= text_field_tag :login %>
-<%= label_tag :password %>
-<%= password_field_tag :password %>
-<%= submit_tag "Login" %>
+  <%= label_tag "Username/Email" %>
+  <%= text_field_tag :login %>
+  <%= label_tag :password %>
+  <%= password_field_tag :password %>
+  <%= submit_tag "Login" %>
 
-<% end %>
+  <% end %>
+
+</div>

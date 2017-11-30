@@ -7,9 +7,8 @@
 
 <h6>Description</h6>
 <p><%= @custom.description %></p>
+
 <h4>FAVOURITES</h4>
-
-
 <% unless @current_user.nil? %>
 <a class="fave-link">Add To Favourites</a>
 <div class="faves-box hidden">
@@ -31,7 +30,9 @@
   <% end %>
 
 </div>
-<% end %> <!-- unless no current user -->
+<% else %> <!-- unless no current user -->
+<a href="/login">Please login to favourite a custom</a>
+<% end %>
 
 <H4>UPVOTES</H4>
 <h5><%= @custom.upvotes.length %></h5>
@@ -57,13 +58,12 @@
 </div>
 
   <div class="combox">
-  <h5>Add a</h5>
+  <h5>Add a Comment</h5>
   <% if @current_user %>
     <%= form_for @wallpost do |f| %>
 
     <%= f.hidden_field :custom_id, :value => @custom.id %>
 
-    <%= f.label "Comment", :class => "block" %>
     <%= f.text_area :message, :required => true, :class => "block comment-input", size: "50x5" %>
 
     <%= f.submit "Add Comment", :class => "btn btn-primary submit-button" %>

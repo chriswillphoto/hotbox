@@ -1,3 +1,13 @@
 // Place all the styles related to the Session controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+.login-container {
+  min-height: calc(100vh - 100px);
+  text-align: center;
+}
+
+.login-container h1{
+  margin: 0;
+  margin-bottom: 50px;
+}
