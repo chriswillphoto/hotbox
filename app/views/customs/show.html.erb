@@ -1,7 +1,7 @@
 <div class="container custom-container">
 
 
-<h1><%= @custom.name %> created by <%= @custom.user.username %></h1>
+<h1><em><%= @custom.name %></em> created by <a href="/users/<%= @custom.user.id %>"><%= @custom.user.username %></a></h1>
 
 <img src="<%= @custom.image %>" alt="" class="img-thumbnail custom-image">
 
