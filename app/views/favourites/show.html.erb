@@ -1,6 +1,14 @@
 <div class="fave-container">
-
-
-
-  <h1>ALL YOUR FAVOURITES ARE HERE</h1>
+  <h1><%= @favourite.name %></h1>
+  <% unless @favourite.customs.empty? %>
+    <% @favourite.customs.each do |c| %>
+      <div class="fave-custom-box">
+        <a href="/customs/<%= c.id %>">
+        <img src="<%= c.image %>" alt="custom-image">
+        <h6><%= c.name %></h6>
+        <p><%= c.description[0..50] %>...</p>
+        </a>
+      </div>
+    <% end %>
+  <% end %>
 </div>

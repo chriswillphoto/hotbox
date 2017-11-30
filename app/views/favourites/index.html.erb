@@ -7,6 +7,11 @@
       <div class="fave-link-box">
         <a href="/users/<%= @user.id %>/favourites/<%= f.id %>" class="fave-link">
          <h6><%= f.name %></h6>
+            <% unless f.customs.empty? %>
+              <% f.customs.each do |c| %>
+                <div class="fave-item" style="background-image: url(<%= c.image %>)"></div>
+              <% end %>
+            <% end %>
         </a>
       </div>
     <% end %>
