@@ -1,5 +1,5 @@
 
-<div class="container">
+<div class="container user-container">
 
   <div class="profile">
     <h1 class="text-center"><%= @user.username %>'s Profile</h1>
@@ -20,12 +20,12 @@
     <h4>CUSTOMS</h4>
     <% unless @user.customs.empty? %>
     <% @user.customs.each do |custom| %>
-    <a href="/customs/<%= custom.id %>">
-    <div class="user-custom" style="background-image: url(<%= custom.image %>)">
-    <h3><%= custom.name %></h3>
-    <!-- <h6 style="font-size: 8px; display:inline;"><%= custom.toaster.model %></h6> -->
-    <% if @user == @current_user %> <a href="/customs/<%= custom.id %>/edit" class="custom-edit">Edit</a> <% end %>
-    </div>
+    <a href="/customs/<%= custom.id %>" class="custom-link">
+      <div class="user-custom" style="background-image: url(<%= custom.image %>)">
+        <h3><%= custom.name %></h3>
+        <!-- <h6 style="font-size: 8px; display:inline;"><%= custom.toaster.model %></h6> -->
+        <% if @user == @current_user %> <a href="/customs/<%= custom.id %>/edit" class="custom-edit">Edit</a> <% end %>
+      </div>
     </a>
     <% end %>
     <% else %>

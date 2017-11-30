@@ -1,6 +1,10 @@
 // Place all the styles related to the Users controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+.user-container {
+  min-height: calc(100vh - 100px);
+}
+
 .user-signup {
   text-align: center;
 }
@@ -8,6 +12,18 @@
 .user-customs {
   text-align: center;
 }
+
+.user-custom, .user-custom a {
+  color: black;
+}
+
+.custom-link {
+  height: 100px;
+  width: 100px;
+  text-decoration: none;
+}
+
+
 
 .new_user {
   text-align: center;
