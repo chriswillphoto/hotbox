@@ -1,7 +1,15 @@
 class ToastersController < ApplicationController
 
   def index
-    @toasters = Toaster.all
+    @toasters = case params[:sort]
+    when nil then Toaster.all
+    when "model" then Toaster.all.order(model: :asc)
+    when "manufacturer" then Toaster.all.order(manufacturer: :asc)
+    when "rating" then Toaster.all.order(score: :desc)
+    end
+    # @toasters = Toaster.all.sort_by {|t| eval(sortable)}
+    # @toasters = Toaster.all.order(sortable: asc )
+    # raise 'hell'
   end
 
   def new
@@ -55,6 +63,6 @@ class ToastersController < ApplicationController
 
   private
   def toaster_params
-    params.require(:toaster).permit(:model, :manufacturer, :year, :user_id, :image)
+    params.require(:toaster).permit(:model, :manufacturer, :year, :user_id, :image, :description)
   end
 end

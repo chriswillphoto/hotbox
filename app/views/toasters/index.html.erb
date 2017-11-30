@@ -50,6 +50,17 @@
     <div class="col-xs-3">
       <h4>Rating</h4>
     </div>
+    <div class="col-xs-1">
+      <form action="/toasters">
+        <label style="display: inline-block;">Sort By:</label>
+        <select class="sortable" name="sort" style="display:inline-block;">
+          <option value="model" <% if params[:sort] == "model" %> selected <% end %> >Model Name</option>
+          <option value="manufacturer" <% if params[:sort] == "manufacturer" %> selected <% end %>>Manufacturer Name</option>
+          <option value="rating" <% if params[:sort] == "rating" %> selected <% end %>>Ratings</option>
+        </select>
+        <button class="sortbutton" hidden>Go</button>
+      </form>
+    </div>
   </div>
   <hr class="seperator">
 
@@ -67,11 +78,11 @@
       <h4><%= t.manufacturer %></h4>
     </div>
     <div class="col-xs-3">
-      <h6><% unless t.rating == 0 %>
+      <h6><% unless t.score == 0 %>
         <div class="smallshowstars">
-          <div class="smallgoldstars" style="width: calc(25px * <%= t.rating / t.ratings %>)"></div>
+          <div class="smallgoldstars" style="width: calc(25px * <%= t.score %>)"></div>
         </div>
-        <p><%= sprintf('%.2f', t.rating / t.ratings ) %></p>
+        <p><%= sprintf('%.2f', t.score ) %></p>
         <% else %>
         Not yet Rated
         <% end %>

@@ -5,6 +5,7 @@ class CommentsController < ApplicationController
     @comment = Comment.new comment_params
     @toaster = Toaster.find @comment.toaster.id
     @toaster.update :rating => @toaster.rating + @comment.rating, :ratings => @toaster.ratings + 1
+    @toaster.update :score => sprintf('%.2f', @toaster.rating / @toaster.ratings )
 
     if @comment.save
       redirect_to toaster_path(@comment.toaster.id)

@@ -17,17 +17,25 @@
       <h3>by <%= @toaster.manufacturer %></h3>
     </div>
     <div class="row center">
-      <% unless @toaster.ratings == 0%>
+      <% unless @toaster.score == 0%>
       <div class="showstars">
-        <div class="goldstars" style="width: calc(50px * <%= @toaster.rating / @toaster.ratings %>)"></div>
+        <div class="goldstars" style="width: calc(50px * <%= @toaster.score %>)"></div>
       </div>
     </div>
     <div class="row center">
-      <h5>( <%= sprintf('%.2f', @toaster.rating / @toaster.ratings ) %> )</h5>
+      <h5>( <%= @toaster.score %> )</h5>
       <% else %>
       <h5>Not Yet Rated</h3>
       <% end %>
     </div>
+    <% unless @toaster.description.nil? %>
+    <div class="row center">
+      <h5 style="margin-top: 50px;">Description</h5>
+    </div>
+    <div class="row center desc-box">
+      <p style="padding: 20px;"><%= @toaster.description %></p>
+    </div>
+    <% end %>
   </div>
 
   </div>
