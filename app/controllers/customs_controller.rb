@@ -24,6 +24,7 @@ class CustomsController < ApplicationController
   def show
     @custom = Custom.find params[:id]
     @wallpost = Wallpost.new
+    @favourite = Favourite.new
   end
 
   def edit

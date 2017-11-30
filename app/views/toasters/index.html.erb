@@ -47,13 +47,13 @@
     <div class="col-xs-3">
       <h4>Manufacturer</h4>
     </div>
-    <div class="col-xs-3">
+    <div class="col-xs-2">
       <h4>Rating</h4>
     </div>
-    <div class="col-xs-1">
+    <div class="col-xs-2">
       <form action="/toasters">
-        <label style="display: inline-block;">Sort By:</label>
-        <select class="sortable" name="sort" style="display:inline-block;">
+        <label class="sortlabel">Sort By:</label>
+        <select class="sortable" name="sort">
           <option value="model" <% if params[:sort] == "model" %> selected <% end %> >Model Name</option>
           <option value="manufacturer" <% if params[:sort] == "manufacturer" %> selected <% end %>>Manufacturer Name</option>
           <option value="rating" <% if params[:sort] == "rating" %> selected <% end %>>Ratings</option>

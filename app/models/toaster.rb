@@ -12,6 +12,8 @@
 #  updated_at   :datetime         not null
 #  user_id      :integer
 #  image        :text
+#  score        :float            default(0.0)
+#  description  :text
 #
 
 class Toaster < ApplicationRecord

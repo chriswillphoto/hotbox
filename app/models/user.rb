@@ -20,6 +20,7 @@ class User < ApplicationRecord
   has_many :comments
   has_many :customs
   has_many :wallposts
+  has_many :upvotes
 
   validates :email, :presence => true, :uniqueness => true
 end

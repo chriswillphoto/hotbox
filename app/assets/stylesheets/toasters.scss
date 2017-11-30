@@ -2,6 +2,10 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
+.toaster-add-title {
+  text-align: center;
+}
+
 .index-list {
   margin-bottom: 40px;
 }
@@ -16,6 +20,35 @@
 
 .desc-box {
   height: 200px;
-  background-color: skyblue;
+  // background-color: skyblue;
   overflow-y: scroll;
+}
+
+.new_toaster > * {
+  margin: 0 auto;
+}
+
+.new_toaster label {
+  text-align: center;
+  width: 100%;
+}
+
+#toaster_image {
+  padding-left: 95px;
+}
+
+.sortable {
+  background-color: white;
+  height: 35px;
+  display: inline-block;
+  width: 100%;
+  border-radius: 1px;
+}
+
+.sortable:hover {
+  cursor: pointer;
+}
+
+.sortlabel {
+  display: inline-block;
 }

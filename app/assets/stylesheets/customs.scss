@@ -2,11 +2,38 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
-.user-customs {
-  border: 1px solid black;
+.custom-container {
+  text-align: center;
+  min-height: calc(100vh - 100px);
 }
 
-.user-custom {
+.combox {
+  margin: 25px 0;
+}
+
+.custom-image {
+  height: 300px;
+  width: 300px;
+}
+
+.comment-input {
+  margin: 0 auto;
+}
+
+.comment-wall {
+  height: 250px;
+  overflow-y: scroll;
+  background-color: rgba(0,0,180,0.1);
+  border-radius: 2em;
+}
+
+.user-customs, .toaster-customs {
+  // border: 1px solid black;
+  margin: 20px auto 25px;
+  text-align: center;
+}
+
+.user-custom, .toaster-custom {
   height: 100px;
   width: 100px;
   background-size: contain;
@@ -16,4 +43,21 @@
 
 .custom-edit {
   margin-top: 20px;
+}
+
+.user-custom a, .toaster-custom a {
+  color: grey;
+}
+
+.wallpost img {
+  height: 30px;
+  width: 30px;
+}
+
+.wallpost img, .wallpost h4 {
+  display: inline-block;
+}
+
+.wallpost p {
+  padding: 0 40px;
 }

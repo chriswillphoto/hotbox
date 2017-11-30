@@ -51,6 +51,8 @@
 <% end %> -->
 
 <div class="container">
+  <div class="row">
+
   <div class="col-md-4">
 
   <h5>Add A Review</h5>
@@ -96,6 +98,37 @@
       <% end %>
     </div>
   </div>
+</div>
 
+<div class="row">
+  <div class="col-xs-12">
+    <div class="row">
+      <h1 style="margin: 0 auto;">Custom Versions of this Toaster</h1>
+    </div>
+    <div class="row">
+      <div class="toaster-customs">
+        <% unless @toaster.customs.empty? %>
+          <% @toaster.customs.each do |custom| %>
+            <a href="/customs/<%= custom.id %>">
+              <div class="toaster-custom" style="background-image: url(<%= custom.image %>)">
+                <h3><%= custom.name %></h3>
+                <% if custom.user == @current_user %>
+                  <a href="/customs/<%= custom.id %>/edit" class="custom-edit">Edit</a>
+                <% end %>
+              </div>
+            </a>
+          <% end %>
+        <% else %>
+          <p>No one has customised this toaster yet!</p>
+        <% end %>
+        <% unless @current_user.nil? %>
+          <a href="/customs/new" style="display: block;">Add Your Custom Toaster to Hotbox!</a>
+        <% end %>
+
+
+      </div>
+    </div>
+  </div>
+</div>
 
 </div>

@@ -2,7 +2,7 @@ class ToastersController < ApplicationController
 
   def index
     @toasters = case params[:sort]
-    when nil then Toaster.all
+    when nil then Toaster.all.order(model: :asc)
     when "model" then Toaster.all.order(model: :asc)
     when "manufacturer" then Toaster.all.order(manufacturer: :asc)
     when "rating" then Toaster.all.order(score: :desc)

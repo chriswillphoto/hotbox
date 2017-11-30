@@ -1,34 +1,73 @@
+<div class="container custom-container">
+
+
 <h1><%= @custom.name %> created by <%= @custom.user.username %></h1>
 
-<img src="<%= @custom.image %>" alt="" class="img-thumbnail">
+<img src="<%= @custom.image %>" alt="" class="img-thumbnail custom-image">
 
+<h6>Description</h6>
 <p><%= @custom.description %></p>
+<h4>TODO FAVOURITES</h4>
+
+
+<% unless @current_user.nil? %>
+<a class="fave-link">Add To Favourites</a>
+<div class="faves-box">
+  <% unless @current_user.favourites.nil? %>
+      <% @current_user.favourites.each do |f| %>
+        <% unless f.customs.include? @custom %>
+          <%= link_to "Add to #{f.name} board", "/users/#{@current_user.id}/favourites/#{f.id}/#{@custom.id}", method: :patch %>
+        <% else %>
+          <%= link_to "Remove from #{f.name} board", "/users/#{@current_user.id}/favourites/#{f.id}/#{@custom.id}", method: :patch %>
+        <% end %>
+      <% end %>
+  <% end %>
+
+  <%= form_for @favourite do |f| %>
+    <%= f.label :name %>
+    <%= f.text_field :name %>
+    <%= f.submit "Create" %>
+  <% end %>
+
+</div>
+<% end %> <!-- unless no current user -->
 
 <H4>TODO UPVOTES</H4>
+<h5><%= @custom.upvotes.length %></h5>
+<% unless @current_user.upvotes.exists?(:custom_id => @custom.id) %>
+  <%= link_to "Upvote", "/customs/#{params[:id]}/upvotes", :method => :post %>
+<% else %>
+  <%= link_to "Un Upvote", "/customs/#{params[:id]}/upvotes", :method => :delete %>
+<% end %>
 
 <h1>TODO COMMENT WALL</h1>
 <div class="comment-wall">
   <% @custom.wallposts.each do |w| %>
     <div class="wallpost">
-      <h4><%= w.user.username %></h4>
+      <img src="<%= w.user.image %>" alt="profile-picture" class="img-thumbnail">
+      <a href="/users/<%= w.user.id %>"><h4><%= w.user.username %></h4></a>
       <p><%= w.message %></p>
+      <hr class="seperator2">
     </div>
   <% end %>
 
 </div>
 
-<h5>Add A Comment</h5>
-<% if @current_user %>
-  <%= form_for @wallpost do |f| %>
+  <div class="combox">
+  <h5>Add A Comment</h5>
+  <% if @current_user %>
+    <%= form_for @wallpost do |f| %>
 
-  <%= f.hidden_field :custom_id, :value => @custom.id %>
+    <%= f.hidden_field :custom_id, :value => @custom.id %>
 
-  <%= f.label :message, :class => "block" %>
-  <%= f.text_field :message, :required => true, :class => "block" %>
+    <%= f.label :message, :class => "block" %>
+    <%= f.text_area :message, :required => true, :class => "block comment-input", size: "50x5" %>
 
-  <%= f.submit "Add Comment", :class => "btn btn-primary submit-button" %>
+    <%= f.submit "Add Comment", :class => "btn btn-primary submit-button" %>
 
+    <% end %>
+  <% else %>
+    <h6>Please <a href="/login">Sign in</a> to Leave a Comment</h6>
   <% end %>
-<% else %>
-<h6>Please <a href="/login">Sign in</a> to Leave a Comment</h6>
-<% end %>
+  </div>
+</div>

@@ -1,4 +1,6 @@
-<h1>Sign Up</h1>
+<div class="signup-container">
+
+<h1 class="user-signup">Sign Up</h1>
 
 
 <% if @user.errors.any? %>
@@ -11,24 +13,26 @@
 
 <%= form_for @user, :html => { :multipart => true } do |f| %>
 
-<%= f.label :name %>
-<%= f.text_field :name %>
+<%= f.label :name, :class => "block" %>
+<%= f.text_field :name, :class => "block" %>
 
-<%= f.label :username %>
-<%= f.text_field :username %>
+<%= f.label :username, :class => "block" %>
+<%= f.text_field :username, :class => "block" %>
 
-<%= f.label :email %>
-<%= f.email_field :email %>
+<%= f.label :email, :class => "block" %>
+<%= f.email_field :email, :class => "block" %>
 
-<%= f.label "Profile Picture" %>
+<%= f.label "Profile Picture", :class => "block" %>
 <%= f.file_field :image %>
 
-<%= f.label :password %>
-<%= f.password_field :password %>
+<%= f.label :password, :class => "block" %>
+<%= f.password_field :password, :class => "block" %>
 
-<%= f.label :password_confirmation %>
-<%= f.password_field :password_confirmation %>
+<%= f.label :password_confirmation, :class => "block" %>
+<%= f.password_field :password_confirmation, :class => "block" %>
 
-<%= f.submit "Sign Up!" %>
+<%= f.submit "Sign Up!", :class => "block btn btn-default" %>
 
 <% end %>
+
+</div>

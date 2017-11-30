@@ -17,6 +17,7 @@ class Custom < ApplicationRecord
   belongs_to :toaster
   has_many :wallposts
   has_and_belongs_to_many :favourites
+  has_many :upvotes
 
   validates :image, :presence => true
 end

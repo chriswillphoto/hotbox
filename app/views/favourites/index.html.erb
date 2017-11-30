@@ -1,1 +1,7 @@
 <h1><%= @user.username %>'s Favourites</h1>
+
+<% @user.favourites.each do |f| %>
+
+<h1><%= f.name %></h1>
+
+<% end %>
