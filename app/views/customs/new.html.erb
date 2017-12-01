@@ -1,22 +1,26 @@
+<div class="customform">
+
 <h1>Add a Custom Toaster to the Database</h1>
 
 <%= form_for @custom, :html => {:multipart => true}  do |f| %>
 
-  <%= f.label :name %>
-  <%= f.text_field :name, :required => true %>
+  <%= f.label :name, :class => "block" %>
+  <%= f.text_field :name, :required => true, :class => "block" %>
 
-  <%= f.label :image %>
-  <%= f.file_field :image %>
+  <%= f.label :image, :class => "block" %>
+  <%= f.file_field :image, :class => "block" %>
 
-  <%= f.label :description %>
-  <%= f.text_area :description, size: "50x5" %>
+  <%= f.label :description, :class => "block" %>
+  <%= f.text_area :description, size: "50x5", :class => "block" %>
 
-  <%= f.label "Toaster Model" %>
-  <%= f.select :toaster_id, Toaster.pluck(:model, :id), :include_blank => true %>
+  <%= f.label "Toaster Model", :class => "block" %>
+  <%= f.select :toaster_id, Toaster.pluck(:model, :id), :include_blank => true, :class => "block" %>
 
-  <%= link_to "Add New Toaster to Database?", new_toaster_path  %>
+  <%= link_to "Add New Toaster to Database?", new_toaster_path, :class => "block"  %>
 
-  <%= f.submit "Add the Custom" %>
+  <%= f.submit "Add the Custom", :class => "block" %>
 
 
 <% end %>
+
+</div>

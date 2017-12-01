@@ -73,3 +73,16 @@ display: block;
 .combox h5 {
   margin-bottom: 0;
 }
+
+.customform {
+  text-align: center;
+  min-height: calc(100vh - 120px);
+}
+
+.customform input, .customform textarea {
+  margin: 0 auto;
+}
+
+#custom_image {
+  padding-left: 95px;
+}

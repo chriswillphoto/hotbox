@@ -6,6 +6,10 @@
   text-align: center;
 }
 
+.index-container {
+  min-height: calc(100vh - 100px);
+}
+
 .index-list {
   margin-bottom: 40px;
 }
