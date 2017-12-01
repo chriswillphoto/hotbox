@@ -31,13 +31,15 @@
 <div class="customs">
   <div class="customs-box">
     <h2>Share Your Custom Toasters Amongst Friends</h2>
-    
+
     <% @customs.each do |c| %>
+    <a href="/customs/<%= c.id %>">
+
     <div class="home-custom" style="background-image: url(<%= c.image %>)">
-      <h6><%= c.name %> by <a href="/users/<%= c.user.id %>"><%= c.user.username -%></a></h6>
-
-
+        <h6 class="home-custom-title"><%= c.name %> by <%= c.user.username %></h6>
     </div>
+  </a>
+
     <% end %>
   </div>
 </div>

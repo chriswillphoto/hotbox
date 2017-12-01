@@ -98,6 +98,24 @@
   background-size: contain;
   // background-color: blue;
   display: inline-block;
+  filter: brightness(0.8);
+}
+
+.home-custom a {
+  width: 150px;
+  height: 150px;
+  display: inline-block;
+}
+
+.home-custom:hover {
+  filter: brightness(1);
+}
+
+.home-custom:hover .home-custom-title {
+  filter: opacity(0);
+}
+.home-custom-title {
+  display: inline-block;
 }
 
 .home-custom h6 {
