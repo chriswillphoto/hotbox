@@ -3,9 +3,11 @@
   <div class="col-md-4">
     <img src="<%= @toaster.image %>" class="img-thumbnail t-profile" alt="">
     <p class="text-right">Added by <%= link_to @toaster.user.username, user_path(@toaster.user.id) %></p>
-    <% if @current_user == @toaster.user || @current_user.admin %>
-    <%= link_to "Edit", edit_toaster_path(@toaster.id) %>
-    <%= button_to "Delete Toaster", toaster_path(@toaster.id), :method => "delete" %>
+    <% unless @current_user.nil? %>
+      <% if @current_user == @toaster.user || @current_user.admin %>
+        <%= link_to "Edit", edit_toaster_path(@toaster.id) %>
+        <%= button_to "Delete Toaster", toaster_path(@toaster.id), :method => "delete" %>
+      <% end %>
     <% end %>
   </div>
 
