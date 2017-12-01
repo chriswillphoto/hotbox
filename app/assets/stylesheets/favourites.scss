@@ -41,6 +41,8 @@
   transform: translateX(-5px) translateY(-5px);
 }
 
+
+
 .fave-custom-box a {
   height: 100%;
   width: 100%;
@@ -48,6 +50,7 @@
 
 .fave-custom-box img {
   width: 230px;
+  border-radius: 2em;
 }
 
 .fave-custom-box {
@@ -56,4 +59,10 @@
   border: 1px solid rgba(0,0,0,0.7);
   border-radius: 2em;
   padding: 10px;
+  transition: 0.5s all
+}
+
+.fave-custom-box:hover {
+  box-shadow: 10px 10px 10px 1px rgba(0,0,0,0.4);
+  transform: translateX(-5px) translateY(-5px);
 }
