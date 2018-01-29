@@ -1,24 +1,7 @@
 # README
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+## Hotbox Application
 
-Things you may want to cover:
-
-* Ruby version
-
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+Hotbox is a social media platform built around a commercial product - in this case: Toasters. Users can sign up to take part and leave Reviews,
+Comment on each other's customs
+or just view the public areas of the sight without contributing - Toasters, Public Profiles and Custom Toasters.

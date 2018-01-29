@@ -8,4 +8,4 @@ $(document).ready(function(){
     $(".faves-box").toggleClass("hidden")
   })
 
-})
+});
