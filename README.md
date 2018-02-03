@@ -15,5 +15,5 @@ jQuery
 http://hotboxing.herokuapp.com
 
 ## Future features
-Responsive UI so it can be used on mobile
+-Responsive UI so it can be used on mobile
 
