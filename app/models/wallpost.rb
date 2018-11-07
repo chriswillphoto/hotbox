@@ -2,7 +2,7 @@
 #
 # Table name: wallposts
 #
-#  id         :integer          not null, primary key
+#  id         :bigint(8)        not null, primary key
 #  message    :text
 #  user_id    :integer
 #  custom_id  :integer

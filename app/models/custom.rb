@@ -2,7 +2,7 @@
 #
 # Table name: customs
 #
-#  id          :integer          not null, primary key
+#  id          :bigint(8)        not null, primary key
 #  name        :text
 #  image       :text
 #  user_id     :text
